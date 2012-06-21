@@ -1,4 +1,4 @@
 .build/
 *.swp
 *.tar.gz
-CPAN-Common-Index-*
+CloudPAN-*

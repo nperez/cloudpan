@@ -58,6 +58,7 @@ __END__
     # 3
 
 =head1 DESCRIPTION
+
 Ever wanted to load modules from the "cloud"? Love the concept of MetaCPAN and
 want to exercise it? Then this module is for you. Simply use this module before
 using any other module that doesn't require compilation and you're set. Note

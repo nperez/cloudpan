@@ -1,6 +1,7 @@
 use warnings;
 use strict;
 use Test::More;
+use File::Path;
 
 use CloudPAN { persistence_location => '/tmp/cloudpan/' };
 
@@ -48,6 +49,8 @@ is(Foo::test_me, 1, 'things loaded appropriately');
 }
 
 is(Foo::test_me, 1, 'things loaded appropriately from cache');
+
+File::Path::remove_tree('/tmp/cloudpan');
 
 done_testing();
 

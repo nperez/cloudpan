@@ -2,6 +2,8 @@ Revision history for {{ $dist->name }}: {{ $dist->version }}
 
 {{ $NEXT }}
 
+1.123261  2012-11-21 03:54:59 Europe/Amsterdam
+
 1.123260  2012-11-21 03:24:08 Europe/Amsterdam
     Use real temporary files
     Implement basic persistence

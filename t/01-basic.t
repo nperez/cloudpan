@@ -7,13 +7,12 @@ BEGIN { use_ok('CloudPAN'); }
 
 {
     package Foo;
-    use Moo;
-
-    has bar => (is => 'ro');
-    sub baz { $_[0]->bar; }
+    use
+        Number::Zero; # Make sure this doesn't show up as a dep
+    sub test_me { is_zero(0) }
 }
 
-is(Foo->new(bar=>3)->baz, 3, 'things loaded appropriately');
+is(Foo::test_me, 1, 'things loaded appropriately');
 
 done_testing();
 

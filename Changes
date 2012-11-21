@@ -2,5 +2,12 @@ Revision history for {{ $dist->name }}: {{ $dist->version }}
 
 {{ $NEXT }}
 
+1.123260  2012-11-21 03:24:08 Europe/Amsterdam
+    Use real temporary files
+    Implement basic persistence
+    Do some more rigorous checking
+    Swap out the tests to use something silly (Number::Zero)
+    Document the new import method
+
 1.121730  2012-06-21 14:30:45 Europe/Amsterdam
     Initial release

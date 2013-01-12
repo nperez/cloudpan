@@ -2,6 +2,9 @@ Revision history for {{ $dist->name }}: {{ $dist->version }}
 
 {{ $NEXT }}
 
+1.130120  2013-01-12 20:20:27 Europe/Amsterdam
+    Always pull the latest version of a module (Thanks Matt Horsfall)
+
 1.123261  2012-11-21 03:54:59 Europe/Amsterdam
 
 1.123260  2012-11-21 03:24:08 Europe/Amsterdam

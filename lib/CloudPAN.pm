@@ -48,7 +48,7 @@ sub fetch_from_metacpan
 
     eval
     {
-        my $ret = $api->fetch('module/_search', q => qq|path:lib/$name|, size => 1, fields => 'author,release,path');
+        my $ret = $api->fetch('module/_search', q => qq|path:lib/$name AND status:latest|, size => 1, fields => 'author,release,path');
         
         die 'NoFetch'
             unless $ret &&

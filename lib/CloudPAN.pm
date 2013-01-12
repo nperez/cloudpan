@@ -11,7 +11,7 @@ BEGIN {
     push(@INC, sub {
         my ($self, $name) = @_;
 
-        my $ret = $api->fetch('module/_search', q => qq|path:lib/$name|, size => 1, fields => 'author,release,path' )
+        my $ret = $api->fetch('module/_search', q => qq|path:lib/$name AND status:latest|, size => 1, fields => 'author,release,path' )
             ->{hits}->{hits}->[0]->{fields} or die "Unable to fetch relevant info from MetaCPAN for $name";
 
         my $req_url = join('/', $api->{base_url}, 'source', @{$ret}{qw/author release path/});

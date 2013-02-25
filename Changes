@@ -2,6 +2,10 @@ Revision history for {{ $dist->name }}: {{ $dist->version }}
 
 {{ $NEXT }}
 
+1.130560  2013-02-25 14:44:54 Europe/Amsterdam
+    Fix the tests. One, let's use a module that should be more permanent. And
+    two, use a tempdir for the persistence test
+
 1.130120  2013-01-12 20:20:27 Europe/Amsterdam
     Always pull the latest version of a module (Thanks Matt Horsfall)
 

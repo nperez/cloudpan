@@ -2,6 +2,9 @@ Revision history for {{ $dist->name }}: {{ $dist->version }}
 
 {{ $NEXT }}
 
+1.130561  2013-02-25 14:56:35 Europe/Amsterdam
+    Oops. Forgot to tell dzil to not mark Acme::Stardate as a prereq
+
 1.130560  2013-02-25 14:44:54 Europe/Amsterdam
     Fix the tests. One, let's use a module that should be more permanent. And
     two, use a tempdir for the persistence test

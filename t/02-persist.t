@@ -2,8 +2,9 @@ use warnings;
 use strict;
 use Test::More;
 use File::Path;
+use File::Temp('tempdir');
 
-use CloudPAN { persistence_location => '/tmp/cloudpan/' };
+use CloudPAN { persistence_location => tempdir(CLEANUP => 1) };
 
 # unload stolen from Class::Unload. Thanks ilmari!
 
@@ -29,8 +30,8 @@ sub unload {
 {
     package Foo;
     use
-        Number::Zero; # Make sure this doesn't show up as a dep
-    sub test_me { is_zero(0) }
+        Acme::Stardate; # Make sure this doesn't show up as a dep
+    sub test_me { !!Acme::Stardate::stardate(); }
 }
 
 is(Foo::test_me, 1, 'things loaded appropriately');
@@ -40,17 +41,14 @@ is(Foo::test_me, 1, 'things loaded appropriately');
     package Bar;
     BEGIN
     {
-        main::unload('Number::Zero');
+        main::unload('Acme::Stardate');
         require
-            Number::Zero;
-        Number::Zero->import();
+            Acme::Stardate;
     }
-    sub test_me { is_zero(0) }
+    sub test_me { !!Acme::Stardate::stardate(); }
 }
 
 is(Foo::test_me, 1, 'things loaded appropriately from cache');
-
-File::Path::remove_tree('/tmp/cloudpan');
 
 done_testing();
 

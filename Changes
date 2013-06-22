@@ -2,6 +2,9 @@ Revision history for {{ $dist->name }}: {{ $dist->version }}
 
 {{ $NEXT }}
 
+1.131730  2013-06-22 12:08:29 Europe/Amsterdam
+    Switch away from treating $fh as an IO::Handle so 5.8.9 works
+
 1.130561  2013-02-25 14:56:35 Europe/Amsterdam
     Oops. Forgot to tell dzil to not mark Acme::Stardate as a prereq
 

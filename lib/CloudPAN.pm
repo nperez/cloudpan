@@ -128,8 +128,8 @@ BEGIN {
         {
             my $content_ref = fetch_from_metacpan($name);
             my $fh = File::Temp::tempfile(UNLINK => 1);
-            $fh->print($$content_ref);
-            $fh->seek(0,0);
+            print $fh $$content_ref;
+            seek($fh, 0, 0);
             return $fh;
         }
     });

@@ -119,8 +119,8 @@ BEGIN {
                 open(my $fh, '+>', $path)
                     or die "Unable to write cached copy of module located at $path";
 
-                $fh->print($$content_ref);
-                $fh->seek(0,0);
+                print $fh $$content_ref;
+                seek($fh, 0, 0);
                 return $fh;
             }
         }
